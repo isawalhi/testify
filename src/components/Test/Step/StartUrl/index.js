@@ -1,3 +1,3 @@
-import StartUrl from "./StartUrl";
+import StartUrl from './StartUrl';
 
 export default StartUrl;
