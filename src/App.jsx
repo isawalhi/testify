@@ -20,7 +20,7 @@ const App = () => (
       <Content className={styles.content}>
         <BrowserRouter>
           <Switch>
-            {Object.keys(routes).map(routeKey => {
+            {Object.keys(routes).map((routeKey) => {
               const route = routes[routeKey];
               return (
                 <Route exact path={route.path}>

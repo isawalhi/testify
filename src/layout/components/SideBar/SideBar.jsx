@@ -8,13 +8,13 @@ import styles from './SideBar.module.css';
 
 const { Sider } = Layout;
 const SideBar = () => (
-  <Sider breakpoint='lg' collapsedWidth='0'>
+  <Sider breakpoint="lg" collapsedWidth="0">
     <div className={styles.logo} />
-    <Menu theme='dark' mode='inline' defaultSelectedKeys={['1']}>
-      <Menu.Item key='1' icon={<HomeOutlined />}>
+    <Menu theme="dark" mode="inline" defaultSelectedKeys={['1']}>
+      <Menu.Item key="1" icon={<HomeOutlined />}>
         Main
       </Menu.Item>
-      <Menu.Item key='2' icon={<PlusCircleOutlined />}>
+      <Menu.Item key="2" icon={<PlusCircleOutlined />}>
         New
       </Menu.Item>
     </Menu>

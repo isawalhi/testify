@@ -6,7 +6,7 @@ import UserOutlined from '@ant-design/icons/UserOutlined';
 const Header = () => (
   <PageHeader
     style={{ background: '#fff' }}
-    title='Testify'
+    title="Testify"
     extra={<Avatar icon={<UserOutlined />} />}
   />
 );

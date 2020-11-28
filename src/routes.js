@@ -9,11 +9,11 @@ const routes = {
   },
   TEST: {
     path: '/test/:id',
-    component: () => <Test type='view' />,
+    component: () => <Test type="view" />,
   },
   TEST_EDIT: {
     path: '/test/:id/edit',
-    component: () => <Test type='edit' />,
+    component: () => <Test type="edit" />,
   },
   SUITE: {
     path: '/suite/:id',
