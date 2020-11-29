@@ -1,6 +1,7 @@
 /* eslint-disable react/jsx-filename-extension */
 import React from 'react';
 import Test from './components/Test';
+import Suites from './components/Suites';
 import { MODES } from './constants';
 
 const routes = {
@@ -38,7 +39,7 @@ const routes = {
     path: '/',
     exact: true,
     id: 'home-page',
-    component: <div>/</div>,
+    component: <Suites />,
   },
 };
 
