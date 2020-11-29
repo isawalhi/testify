@@ -1,12 +1,14 @@
 import React from 'react';
-import PageHeader from 'antd/es/page-header';
 import Avatar from 'antd/es/avatar';
+import PageHeader from 'antd/es/page-header';
 import UserOutlined from '@ant-design/icons/UserOutlined';
+
+import styles from './Header.module.css';
 
 const Header = () => (
   <PageHeader
-    style={{ background: '#fff' }}
     title="Testify"
+    className={styles.pageHeader}
     extra={<Avatar icon={<UserOutlined />} />}
   />
 );

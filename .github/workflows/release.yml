@@ -1,0 +1,32 @@
+name: Release
+
+on:
+  push:
+    branches:
+      - master
+
+env:
+    REPO_NAME: ${{ github.event.repository.name }}
+jobs:
+  build: 
+    name: Build to test env
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 14
+      - name: Get short SHA
+        run: echo "GITHUB_SHA_7=$(echo ${GITHUB_SHA} | cut -c1-7)" >> $GITHUB_ENV
+      - run: npm ci
+      - run: npm run build
+      - name: Deploy bundles to AWS s3 latest folder
+        uses: jakejarvis/s3-sync-action@master
+        with:
+          args: --acl public-read --follow-symlinks --delete --cache-control 'no-cache'
+        env:
+          AWS_S3_BUCKET: ${{ secrets.AWS_BUCKET_NAME }}
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_SECRET_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_KEY }}
+          SOURCE_DIR: dist
+

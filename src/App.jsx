@@ -13,26 +13,27 @@ import SideBar from './layout/components/SideBar';
 const { Content } = Layout;
 
 const App = () => (
-  <Layout className={styles.layout}>
-    <SideBar />
-    <Layout>
-      <Header />
-      <Content className={styles.content}>
-        <BrowserRouter>
+  <BrowserRouter>
+    <Layout className={styles.layout}>
+      <SideBar />
+      <Layout>
+        <Header />
+        <Content className={styles.content}>
           <Switch>
             {Object.keys(routes).map((routeKey) => {
               const route = routes[routeKey];
+              const Component = route.component;
               return (
-                <Route exact path={route.path}>
-                  {route.component()}
+                <Route exact={route.exact} path={route.path} key={route.id}>
+                  {Component}
                 </Route>
               );
             })}
           </Switch>
-        </BrowserRouter>
-      </Content>
+        </Content>
+      </Layout>
     </Layout>
-  </Layout>
+  </BrowserRouter>
 );
 
 export default App;
