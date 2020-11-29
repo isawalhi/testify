@@ -20,7 +20,7 @@ jobs:
         run: echo "GITHUB_SHA_7=$(echo ${GITHUB_SHA} | cut -c1-7)" >> $GITHUB_ENV
       - run: npm ci
       - run: npm run build
-      - name: Deploy bundles to AWS s3 latest folder
+      - name: Deploy bundles to AWS s3
         uses: jakejarvis/s3-sync-action@master
         with:
           args: --acl public-read --follow-symlinks --delete --cache-control 'no-cache'
@@ -28,5 +28,5 @@ jobs:
           AWS_S3_BUCKET: ${{ secrets.AWS_BUCKET_NAME }}
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_SECRET_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_KEY }}
-          SOURCE_DIR: dist
+          SOURCE_DIR: build
 
