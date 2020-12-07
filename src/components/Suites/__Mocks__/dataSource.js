@@ -1,8 +1,9 @@
-const dataSource = [
+const suites = [
   {
     key: '1',
     name: 'Suite #1 Sanity',
     description: 'This suite contains all the sanity tests fro suite #1',
+    labels: ['P1', 'P2'],
     status: {
       passing: 20,
       failing: 2,
@@ -16,6 +17,7 @@ const dataSource = [
     key: '2',
     name: 'Suite #1 Regression',
     description: 'This suite contains all the regression tests fro suite #1',
+    labels: ['P1', 'P3'],
     status: {
       passing: 20,
       failing: 2,
@@ -29,6 +31,7 @@ const dataSource = [
     key: '3',
     name: 'Suite #2 Sanity',
     description: 'This suite contains all the sanity tests fro suite #2',
+    labels: ['P3'],
     status: {
       passing: 20,
       failing: 2,
@@ -55,6 +58,7 @@ const dataSource = [
     key: '5',
     name: 'Suite #5 Regression',
     description: 'This suite contains all the regression tests fro suite #5',
+    labels: ['P1', 'P2', 'P5'],
     status: {
       passing: 20,
       failing: 2,
@@ -65,9 +69,10 @@ const dataSource = [
     },
   },
   {
-    key: '4',
+    key: '6',
     name: 'Suite #5 Regression',
     description: 'This suite contains all the regression tests fro suite #5',
+    labels: ['P1', 'P8'],
     status: {
       passing: 20,
       failing: 2,
@@ -78,9 +83,10 @@ const dataSource = [
     },
   },
   {
-    key: '4',
+    key: '7',
     name: 'Suite #2 Regression',
     description: 'This suite contains all the regression tests fro suite #2',
+    labels: ['P1', 'P2'],
     status: {
       passing: 20,
       failing: 2,
@@ -91,9 +97,10 @@ const dataSource = [
     },
   },
   {
-    key: '4',
+    key: '8',
     name: 'Suite #2 Regression',
     description: 'This suite contains all the regression tests fro suite #2',
+    labels: ['P1', 'P2'],
     status: {
       passing: 20,
       failing: 2,
@@ -104,9 +111,10 @@ const dataSource = [
     },
   },
   {
-    key: '4',
+    key: '9',
     name: 'Suite #2 Regression',
     description: 'This suite contains all the regression tests fro suite #2',
+    labels: ['P1', 'P2'],
     status: {
       passing: 20,
       failing: 2,
@@ -118,4 +126,4 @@ const dataSource = [
   },
 ];
 
-export default dataSource;
+export default suites;
