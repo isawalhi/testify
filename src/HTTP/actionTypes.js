@@ -1,0 +1,9 @@
+import { APP_NAME } from '../constants';
+
+const SHOW_REQUEST_LOADER = `${APP_NAME}/SHOW_REQUEST_LOADER`;
+const HIDE_REQUEST_LOADER = `${APP_NAME}/HIDE_REQUEST_LOADER`;
+
+export default {
+  SHOW_REQUEST_LOADER,
+  HIDE_REQUEST_LOADER,
+};
