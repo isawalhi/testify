@@ -10,7 +10,8 @@ const httpReducer = (state = initialState, action) => {
       return { ...state, loader: true };
     case Types.HIDE_REQUEST_LOADER:
       return { ...state, loader: false };
-    default: return state;
+    default:
+      return state;
   }
 };
 
