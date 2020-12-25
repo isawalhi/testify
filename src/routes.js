@@ -1,6 +1,7 @@
 /* eslint-disable react/jsx-filename-extension */
 import React from 'react';
 import Test from './components/Test';
+import Suite from './components/Suite';
 import Suites from './components/Suites';
 import { MODES } from './constants';
 
@@ -27,7 +28,7 @@ const routes = {
     id: 'suite-view',
     exact: true,
     path: '/suite/:id',
-    component: <div>Suite</div>,
+    component: <Suite />,
   },
   SUITE_EDIT: {
     id: 'suite-edit',

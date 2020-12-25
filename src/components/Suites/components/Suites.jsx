@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 
 import filter from 'lodash/filter';
+import uniqueId from 'lodash/uniqueId';
 import startCase from 'lodash/startCase';
 import intersection from 'lodash/intersection';
 
@@ -22,7 +23,9 @@ const Suites = () => {
   const [displayableSuites, setDisplayableSuites] = useState(undefined);
 
   useEffect(() => {
-    if (suites?.length <= 0) { dispatch(getAllSuites()); }
+    if (suites?.length <= 0) {
+      dispatch(getAllSuites());
+    }
   }, [suites, dispatch]);
 
   const labelSelectHandler = (label) => {
@@ -62,13 +65,16 @@ const Suites = () => {
       key: 'labels',
       filtered: true,
       width: 240,
-      render: (labels = []) => labels.map((lab) => <Tag color="blue">{lab}</Tag>),
+      render: (labels = []) => labels.map((lab) => (
+        <Tag key={uniqueId(lab)} color="blue">
+          {lab}
+        </Tag>
+      )),
     },
     {
       dataIndex: 'status',
       key: 'status',
       width: 300,
-      fixed: true,
       render: (data) => {
         const { passing, failing, unknown } = data;
         return (
