@@ -21,7 +21,7 @@ const Suite = () => {
 
   useEffect(() => {
     dispatch(getSuite(suiteId));
-  }, [suiteId]);
+  }, [suiteId, dispatch]);
 
   const columns = [
     {

@@ -20,7 +20,8 @@ function* getAllSuites() {
   } catch (e) {
     // TODO remove or set a flag to return mocked data
     yield put(setAllSuites(mockedSuites));
-    throw new Error('Failed to fetch suites');
+    // eslint-disable-next-line no-console
+    console.error('Failed to fetch suites');
   }
 }
 
