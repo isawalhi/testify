@@ -1,6 +1,6 @@
-import reducer from './reducer';
+import httpReducer from './reducer';
 import { doGetRequest } from './saga';
 
-export { doGetRequest, reducer };
+export { doGetRequest, httpReducer };
 
-export default { doGetRequest, reducer };
+export default { doGetRequest, httpReducer };

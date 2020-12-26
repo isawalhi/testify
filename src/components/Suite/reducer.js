@@ -1,12 +1,17 @@
 import Types from './actionTypes';
 
-const initialState = {};
+const initialState = {
+  loading: false,
+};
 
-const reducer = (state = initialState, action) => {
+const suiteReducer = (state = initialState, action) => {
   switch (action.type) {
     case Types.SET_SUITE: {
       const { suite } = action;
-      return { ...state, ...suite };
+      return { ...state, [suite.id]: { ...suite } };
+    }
+    case Types.SET_LOADING_STATUS: {
+      return { ...state, loading: action.loading };
     }
     default: {
       return state;
@@ -16,4 +21,4 @@ const reducer = (state = initialState, action) => {
 
 export const suiteSelector = (state) => state.suite;
 
-export default reducer;
+export default suiteReducer;

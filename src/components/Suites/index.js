@@ -1,6 +1,6 @@
-import saga from './saga';
-import reducer from './reducer';
+import suitesSaga from './saga';
+import suitesReducer from './reducer';
 import Suites from './components/Suites';
 
-export { saga, reducer };
+export { suitesSaga, suitesReducer };
 export default Suites;

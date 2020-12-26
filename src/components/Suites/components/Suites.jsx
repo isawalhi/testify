@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import filter from 'lodash/filter';
 import uniqueId from 'lodash/uniqueId';
-import startCase from 'lodash/startCase';
+import capitalize from 'lodash/capitalize';
 import intersection from 'lodash/intersection';
 
 import Tag from 'antd/es/tag';
@@ -14,6 +14,8 @@ import Select from 'antd/es/select';
 import { getAllLabels } from '../utils';
 import { getAllSuites } from '../actions';
 import { selector as suiteSelector } from '../reducer';
+
+import { STATUSES } from '../../common/constants';
 
 import styles from './Suites.module.css';
 
@@ -49,7 +51,7 @@ const Suites = () => {
       key: 'name',
       render: (text, data) => (
         <Link to={`/suite/${data.id}`}>
-          <b>{startCase(text)}</b>
+          <b>{capitalize(text)}</b>
         </Link>
       ),
     },
@@ -76,23 +78,23 @@ const Suites = () => {
       key: 'status',
       width: 300,
       render: (data) => {
-        const { passing, failing, unknown } = data;
+        const { passed, failed, unknown } = STATUSES;
         return (
           <>
-            <Tag color="green">
-              {passing}
+            <Tag color={passed.color}>
+              {data.passing}
               {' '}
-              Passing
+              {passed.value}
             </Tag>
-            <Tag color="red">
-              {failing}
+            <Tag color={failed.color}>
+              {data.failing}
               {' '}
-              Failing
+              {failed.value}
             </Tag>
-            <Tag color="grey">
-              {unknown}
+            <Tag color={unknown.color}>
+              {data.unknown}
               {' '}
-              Unknown
+              {unknown.value}
             </Tag>
           </>
         );

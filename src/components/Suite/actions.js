@@ -10,4 +10,9 @@ export const setSuite = (suite) => ({
   suite,
 });
 
-export default { getSuite, setSuite };
+export const setLoadingStatus = (loading) => ({
+  type: Types.SET_LOADING_STATUS,
+  loading,
+});
+
+export default { getSuite, setSuite, setLoadingStatus };
