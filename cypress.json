@@ -1,3 +1,4 @@
 {
-    "baseUrl": "https://portal-latest.adev.scopely.io"
+    "baseUrl": "https://portal-latest.adev.scopely.io",
+    "video": false
 }

@@ -36,7 +36,7 @@
     "format": "prettier --write src/**/*.js*",
     "lint": "eslint src/**/*.js*",
     "lint:fix": "npm run lint -- --fix",
-    "test:e2e": "cypress run",
+    "test:e2e": "cypress run --browser=./node_modules/chromium/lib/chromium/chrome-mac/Chromium.app/Contents/MacOS/Chromium",
     "analyze": "source-map-explorer 'build/static/js/*.js'"
   },
   "husky": {
@@ -63,6 +63,7 @@
     ]
   },
   "devDependencies": {
+    "chromium": "^3.0.2",
     "cypress": "^6.5.0",
     "cypress-image-snapshot": "^4.0.1",
     "eslint": "^7.11.0",
