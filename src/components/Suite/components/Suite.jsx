@@ -53,7 +53,6 @@ const Suite = () => {
     {
       title: 'Name',
       dataIndex: 'name',
-      width: 400,
       key: 'name',
       render: (text, data) => (
         <Link to={`/test/${data.id}`}>
@@ -65,7 +64,8 @@ const Suite = () => {
       title: 'Labels',
       dataIndex: 'labels',
       key: 'labels',
-      width: 300,
+      width: '15%',
+      responsive: ['md'],
       render: (labels = []) => labels.map((lab) => (
         <Tag key={uniqueId(lab)} color="blue">
           {lab}
@@ -91,6 +91,7 @@ const Suite = () => {
       dataIndex: 'screenshot',
       key: 'screenshot',
       filters,
+      responsive: ['md'],
       onFilter: (value, record) => record.screenshot.indexOf(value) === 0,
       width: 100,
       render: (_status, data) => (
@@ -110,7 +111,7 @@ const Suite = () => {
 
   return (
     <>
-      {!loading && (
+      {loading && (
         <PageHeader
           title={capitalize(name)}
           subTitle={description}

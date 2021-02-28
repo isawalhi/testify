@@ -3,7 +3,7 @@ name: Release
 on:
   push:
     branches:
-      - master
+      - beta
 
 env:
     REPO_NAME: ${{ github.event.repository.name }}

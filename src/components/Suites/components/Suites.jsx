@@ -59,14 +59,14 @@ const Suites = () => {
       title: 'Description',
       dataIndex: 'description',
       key: 'description',
-      width: 360,
+      responsive: ['md'],
     },
     {
       title: 'Labels',
       dataIndex: 'labels',
       key: 'labels',
       filtered: true,
-      width: 240,
+      responsive: ['md'],
       render: (labels = []) => labels.map((lab) => (
         <Tag key={uniqueId(lab)} color="blue">
           {lab}

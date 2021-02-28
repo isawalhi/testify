@@ -5,7 +5,9 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import 'regenerator-runtime/runtime';
 
-import 'antd/dist/antd.css';
+// import 'antd/dist/antd.css';
+import 'antd/lib/style/themes/default.less';
+import 'antd/dist/antd.less'; // Import Ant Design styles by less entry
 
 import sagas from './sagas';
 import routes from './routes';
@@ -16,10 +18,7 @@ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const sagaMiddleware = createSagaMiddleware();
 
-const store = createStore(
-  reducers,
-  composeEnhancers(applyMiddleware(sagaMiddleware)),
-);
+const store = createStore(reducers, composeEnhancers(applyMiddleware(sagaMiddleware)));
 
 sagaMiddleware.run(sagas);
 
