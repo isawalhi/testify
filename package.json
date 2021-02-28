@@ -36,7 +36,7 @@
     "format": "prettier --write src/**/*.js*",
     "lint": "eslint src/**/*.js*",
     "lint:fix": "npm run lint -- --fix",
-    "test:e2e": "cypress run --browser=./node_modules/chromium/lib/chromium/chrome-mac/Chromium.app/Contents/MacOS/Chromium",
+    "test:e2e": "cypress run --browser=chromium",
     "analyze": "source-map-explorer 'build/static/js/*.js'"
   },
   "husky": {
@@ -75,6 +75,7 @@
     "eslint-plugin-prettier": "^3.1.4",
     "eslint-plugin-react": "^7.21.5",
     "eslint-plugin-react-hooks": "^4.0.0",
+    "execa": "^5.0.0",
     "prettier": "^2.2.1"
   }
 }
