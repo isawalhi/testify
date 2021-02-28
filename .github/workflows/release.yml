@@ -19,6 +19,7 @@ jobs:
       - name: Get short SHA
         run: echo "GITHUB_SHA_7=$(echo ${GITHUB_SHA} | cut -c1-7)" >> $GITHUB_ENV
       - run: npm ci
+      - run: npm run test:e2e
       - run: npm run build
       - name: Deploy bundles to AWS s3
         uses: jakejarvis/s3-sync-action@master
