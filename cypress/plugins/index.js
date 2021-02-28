@@ -58,7 +58,7 @@ module.exports = async (on, config) => {
     // console.log(browser);
     config.browsers.push(browser);
   });
-  on('before:browser:launch', (browser = {}, args) => {
+  on('before:browser:launch', (browser = {}, launchOptions) => {
     if (browser.name === 'chrome' || browser.name === 'chromium') {
       // In headless mode, Cypress fixes the scale factor to 1, and this forces
       // screenshots to be taken with an image size matching the viewport size
@@ -69,8 +69,8 @@ module.exports = async (on, config) => {
       //
       // See: https://github.com/cypress-io/cypress/issues/2102#issuecomment-521299946
       // See: https://github.com/cypress-io/cypress/blame/a7dfda986531f9176468de4156e3f1215869c342/packages/server/lib/cypress.coffee#L132-L137
-      args.push('--force-device-scale-factor=3');
-      args.push(...['--no-sandbox', '--disable-setuid-sandbox', '--hide-scrollbars', '--font-render-hinting=none']);
+      launchOptions.args.push('--force-device-scale-factor=3');
+      launchOptions.args.push(...['--no-sandbox', '--disable-setuid-sandbox', '--hide-scrollbars', '--font-render-hinting=none']);
     } else if (browser.name === 'electron' && browser.isHeaded) {
       // eslint-disable-next-line no-console
       console.log(
@@ -78,7 +78,7 @@ module.exports = async (on, config) => {
       );
     }
 
-    return args;
+    return launchOptions;
   });
   // `on` is used to hook into various events Cypress emits
   // `config` is the resolved Cypress config
