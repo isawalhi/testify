@@ -3,7 +3,7 @@
 describe('Actions', () => {
   beforeEach(() => {
     cy.visit('/');
-    cy.document().then((document) => document.head.insertAdjacentHTML('beforeend', '<style>* { font-family: Helvetica !important; } html { overflow-y: hidden; }</style>'));
+    cy.document().then((document) => document.head.insertAdjacentHTML('beforeend', '<style>* { font-family: Helvetica !important; } html { overflow-y: hidden; -webkit-font-smoothing: unset; font-smooth: never }</style>'));
   });
 
   // https://on.cypress.io/interacting-with-elements
