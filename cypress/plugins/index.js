@@ -32,6 +32,7 @@ module.exports = (on, config) => {
       // See: https://github.com/cypress-io/cypress/issues/2102#issuecomment-521299946
       // See: https://github.com/cypress-io/cypress/blame/a7dfda986531f9176468de4156e3f1215869c342/packages/server/lib/cypress.coffee#L132-L137
       args.push('--force-device-scale-factor=3');
+      args.push(...['--no-sandbox', '--disable-setuid-sandbox', '--hide-scrollbars', '--font-render-hinting=none']);
     } else if (browser.name === 'electron' && browser.isHeaded) {
       // eslint-disable-next-line no-console
       console.log(
